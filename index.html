@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="カフェ巡り、旅行、音楽、読書。私の好きなことを紹介する小さなページです。">
+  <title>私の趣味 | My Hobby</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <header class="site-header" id="top">
+    <a class="logo" href="#top" aria-label="私の趣味 ホーム"><span class="logo-mark">☕</span><span>私の趣味</span></a>
+    <nav class="main-nav" aria-label="メインナビゲーション">
+      <a href="#top" class="active">ホーム</a>
+      <a href="#cafe">カフェ巡り</a>
+      <a href="#travel">旅行</a>
+      <a href="#music">音楽</a>
+      <a href="#reading">読書</a>
+    </nav>
+    <button class="menu-toggle" aria-label="メニュー" aria-expanded="false">☰</button>
+  </header>
+
+  <main>
+    <section class="hero" aria-label="趣味の紹介">
+      <div class="hero-content">
+        <p class="eyebrow">MY LITTLE HOBBIES</p>
+        <h1>好きなものに囲まれて、<br>ゆっくり過ごす。</h1>
+        <p class="hero-copy">何気ない日常の中にある、<br>小さな楽しみを集めました。</p>
+        <a class="hero-link" href="#hobbies">趣味を見る <span>↓</span></a>
+      </div>
+    </section>
+
+
+    <section class="intro" id="hobbies">
+      <p class="section-kicker">A LITTLE ABOUT ME</p>
+      <h2>私の好きなこと</h2>
+      <p class="intro-text">カフェ巡りや旅行、音楽、読書。<br>好きなことをしている時間は、心がふっと軽くなる気がします。<br>そんな日々の楽しみを、少しだけ紹介します。</p>
+    </section>
+
+
+    <section class="hobby-grid" aria-label="趣味一覧">
+      <article class="hobby-card" id="cafe">
+        <a class="card-image" href="#cafe-note"><img src="images/cafe.jpg" alt="カフェのテーブルに置かれたラテ" loading="lazy"></a>
+        <div class="card-body"><span class="card-icon">☕</span><h3>カフェ巡り</h3><p>お気に入りのカフェを見つけて、ゆったりとした時間を過ごすのが好きです。</p><a class="button" href="#cafe-note">詳しく見る <span>›</span></a></div>
+      </article>
+      <article class="hobby-card" id="travel">
+        <a class="card-image" href="#travel-note"><img src="images/travel.jpg" alt="青い海と白い街並みの風景" loading="lazy"></a>
+        <div class="card-body"><span class="card-icon">✈</span><h3>旅行</h3><p>知らない景色や街を歩くのが好き。次はどこへ行こうかな。</p><a class="button" href="#travel-note">詳しく見る <span>›</span></a></div>
+      </article>
+      <article class="hobby-card" id="music">
+        <a class="card-image" href="#music-note"><img src="images/music.jpg" alt="テーブルの上に置かれたヘッドホン" loading="lazy"></a>
+        <div class="card-body"><span class="card-icon">♫</span><h3>音楽</h3><p>好きな音楽を聴いていると、気分がリフレッシュできます。</p><a class="button" href="#music-note">詳しく見る <span>›</span></a></div>
+      </article>
+      <article class="hobby-card" id="reading">
+        <a class="card-image" href="#reading-note"><img src="images/reading.jpg" alt="積み重ねられた本" loading="lazy"></a>
+        <div class="card-body"><span class="card-icon">▤</span><h3>読書</h3><p>本を読む時間は、心を落ち着かせてくれる大切な時間です。</p><a class="button" href="#reading-note">詳しく見る <span>›</span></a></div>
+      </article>
+    </section>
+
+
+    <section class="notes" aria-label="趣味についてのメモ">
+      <article id="cafe-note"><span>01 / CAFE</span><h2>お気に入りの一杯を探して</h2><p>静かな店内でコーヒーを飲みながら、ぼんやり窓の外を眺める時間が好き。居心地のいいお店を少しずつ開拓しています。</p></article>
+      <article id="travel-note"><span>02 / TRAVEL</span><h2>まだ知らない景色に会いに</h2><p>旅先では、予定を詰め込みすぎず気の向くまま歩くのが楽しみ。きれいな景色や街の空気を写真に残します。</p></article>
+      <article id="music-note"><span>03 / MUSIC</span><h2>音楽と過ごすひととき</h2><p>お気に入りの曲を聴きながら家事をしたり、散歩をしたり。音楽は日常を少し特別にしてくれます。</p></article>
+      <article id="reading-note"><span>04 / BOOKS</span><h2>本の世界に浸る時間</h2><p>小説やエッセイを読むのが好きです。忙しい日でも、本を開くと自分のペースを取り戻せる気がします。</p></article>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a href="#top" class="back-top" aria-label="ページ上部へ">↑</a><p>© 2025 私の趣味 <span>—</span> All Rights Reserved.</p><p class="footer-small">A little joy in everyday life.</p></footer>
+  <script>
+    const menuButton = document.querySelector('.menu-toggle');
+    const nav = document.querySelector('.main-nav');
+    menuButton.addEventListener('click', () => {
+      const opened = nav.classList.toggle('is-open');
+      menuButton.setAttribute('aria-expanded', opened);
+    });
+    nav.querySelectorAll('a').forEach(link => link.addEventListener('click', () => {
+      nav.classList.remove('is-open');
+      menuButton.setAttribute('aria-expanded', 'false');
+    }));
+  </script>
+</body>
+</html>
